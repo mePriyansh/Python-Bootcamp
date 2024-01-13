@@ -1,6 +1,8 @@
 prompt="Enter a To-Do item: "
 
+todos=[]
+
 while True:
     todo=input(prompt)
-    print("You entered:", todo)
-    print("Next...")
+    todos.append(todo)
+    print("To-Do list:", todos)
