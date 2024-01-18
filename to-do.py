@@ -1,6 +1,7 @@
 todos=[]
 while True:
     action = input("Add or Show or Exit ? ")
+    action=action.strip()
 
     match action:
         case "Add":
