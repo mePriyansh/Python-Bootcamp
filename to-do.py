@@ -1,4 +1,4 @@
-todos=[]
+todos = []
 while True:
     action = input("Add or Show or Edit or Complete or Exit? ")
     action=action.strip()
