@@ -56,7 +56,18 @@ while True:
         case "Complete":
             number = int(input("Enter the number of the item to complete: "))
             number=number-1
+
+            with open("todos.txt","r") as file:             #To read file but don't need to close the file
+                todos = file.readlines()
+
+            todo_to_complete = todos[number]
             todos.pop(number)
+
+            with open("todos.txt","w") as file:
+                file.writelines(todos)
+
+            message = f"{todo_to_complete.strip()} is completed!"
+            print(message)
         
         case "Exit":
             break
