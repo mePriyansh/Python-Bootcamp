@@ -6,20 +6,26 @@ while True:
         case "Add":
             todo = input("Enter a to-do item: ") + "\n"
 
-            file=open("todos.txt","r")
+            '''file=open("todos.txt","r")       To read file and append the new item
             todos=file.readlines()
-            file.close()
+            file.close()'''
+
+            with open("todos.txt","r") as file:             #To read file but don't need to close the file
+                todos = file.readlines()
 
             todos.append(todo)
             
-            file=open("todos.txt","w")  
+            '''file=open("todos.txt","w")  
             file.writelines(todos)
-            file.close()
+            file.close()'''
+
+            with open("todos.txt","w") as file:
+                file.writelines(todos)             
         
         case "Show":
-            file=open("todos.txt","r")
-            todos=file.readlines()
-            file.close()
+
+            with open("todos.txt","r") as file:             #To read file but don't need to close the file
+                todos = file.readlines()
             
             ''' To remove the \n from the list using for loop
             new_todos = []
