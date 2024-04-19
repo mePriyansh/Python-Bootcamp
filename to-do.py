@@ -20,13 +20,17 @@ while True:
             file=open("todos.txt","r")
             todos=file.readlines()
             file.close()
-
+            
+            ''' To remove the \n from the list using for loop
             new_todos = []
             for item in todos:
                 new_item = item.strip('\n')
                 new_todos.append(new_item)
+            '''
+            #new_todos = [item.strip('\n') for item in todos] # List comprehension to remove the \n from the list
             
-            for index, items in enumerate(new_todos):
+            for index, items in enumerate(todos):
+                items = items.strip('\n')
                 row = f"{index+1}-{items}"
                 print(row)
         
