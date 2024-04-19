@@ -43,8 +43,15 @@ while True:
         case "Edit":
             number = int(input("Enter the number of the item to edit: "))
             number=number-1
+
+            with open("todos.txt","r") as file:             #To read file but don't need to close the file
+                todos = file.readlines()
+
             new_todo = input("Enter the new to-do item: ")
-            todos[number] = new_todo
+            todos[number] = new_todo+"\n"
+
+            with open("todos.txt","w") as file:
+                file.writelines(todos) 
         
         case "Complete":
             number = int(input("Enter the number of the item to complete: "))
