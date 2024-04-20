@@ -2,7 +2,7 @@ while True:
     action = input("Add or Show or Edit or Complete or Exit? ")
     action = action.strip()
 
-    if "Add" in action:
+    if action.startswith("Add"):
         todo = action[4:]
 
         with open("todos.txt", "r") as file:
@@ -14,7 +14,7 @@ while True:
             file.writelines(todos)
         print(f"{todo} is added!")
 
-    elif "Show" in action:
+    elif action.startswith("Show"):
 
         with open("todos.txt", "r") as file:
             todos = file.readlines()
@@ -22,7 +22,7 @@ while True:
         for index, item in enumerate(todos, 1):
             print(f"{index}-{item.strip()}")
 
-    elif "Edit" in action:
+    elif action.startswith("Edit"):
         number = int(action[5:])
         print(number)
         number -= 1
@@ -36,7 +36,7 @@ while True:
         with open("todos.txt", "w") as file:
             file.writelines(todos)
 
-    elif "Complete" in action:
+    elif action.startswith("Complete"):
         number = int(action[9:])
         number -= 1
 
@@ -52,7 +52,7 @@ while True:
         message = f"{todo_to_complete.strip()} is completed!"
         print(message)
 
-    elif "Exit" in action:
+    elif action.startswith("Exit"):
         break
 
     else:
