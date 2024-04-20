@@ -23,7 +23,8 @@ while True:
             print(f"{index}-{item.strip()}")
 
     elif "Edit" in action:
-        number = int(input("Enter the number of the item to edit: "))
+        number = int(action[5:])
+        print(number)
         number -= 1
 
         with open("todos.txt", "r") as file:
@@ -36,7 +37,7 @@ while True:
             file.writelines(todos)
 
     elif "Complete" in action:
-        number = int(input("Enter the number of the item to complete: "))
+        number = int(action[9:])
         number -= 1
 
         with open("todos.txt", "r") as file:
