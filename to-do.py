@@ -23,34 +23,42 @@ while True:
             print(f"{index}-{item.strip()}")
 
     elif action.startswith("Edit"):
-        number = int(action[5:])
-        print(number)
-        number -= 1
+        try:
+            number = int(action[5:])
+            print(number)
+            number -= 1
 
-        with open("todos.txt", "r") as file:
-            todos = file.readlines()
+            with open("todos.txt", "r") as file:
+                todos = file.readlines()
 
-        new_todo = input("Enter the new to-do item: ")
-        todos[number] = new_todo + "\n"
+            new_todo = input("Enter the new to-do item: ")
+            todos[number] = new_todo + "\n"
 
-        with open("todos.txt", "w") as file:
-            file.writelines(todos)
+            with open("todos.txt", "w") as file:
+                file.writelines(todos)
+        except ValueError:
+            print("Not a valid command!!")
+            continue
 
     elif action.startswith("Complete"):
-        number = int(action[9:])
-        number -= 1
+        try:
+            number = int(action[9:])
+            number -= 1
 
-        with open("todos.txt", "r") as file:
-            todos = file.readlines()
+            with open("todos.txt", "r") as file:
+                todos = file.readlines()
 
-        todo_to_complete = todos[number]
-        todos.pop(number)
+            todo_to_complete = todos[number]
+            todos.pop(number)
 
-        with open("todos.txt", "w") as file:
-            file.writelines(todos)
+            with open("todos.txt", "w") as file:
+                file.writelines(todos)
 
-        message = f"{todo_to_complete.strip()} is completed!"
-        print(message)
+            message = f"{todo_to_complete.strip()} is completed!"
+            print(message)
+        except IndexError:
+            print("No item found with that number!!")
+            continue
 
     elif action.startswith("Exit"):
         break
