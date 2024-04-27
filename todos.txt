@@ -2,3 +2,5 @@ Study
 Play game
 Code
 Buy Grocery
+Go Gym
+Drink Protein shake
