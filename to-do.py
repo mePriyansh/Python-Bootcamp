@@ -1,5 +1,5 @@
-def get_todos():
-    with open("todos.txt", "r") as file_local:
+def get_todos(filepath):
+    with open(filepath, "r") as file_local:
          todos_local = file_local.readlines()
          return todos_local
 
@@ -11,7 +11,7 @@ while True:
     if action.startswith("Add"):
         todo = action[4:]
 
-        todos = get_todos()
+        todos = get_todos("todos.txt")
 
         todos.append(todo + "\n")
 
@@ -21,7 +21,7 @@ while True:
 
     elif action.startswith("Show"):
 
-        todos = get_todos()
+        todos = get_todos("todos.txt")
 
         for index, item in enumerate(todos, 1):
             print(f"{index}-{item.strip()}")
@@ -32,7 +32,7 @@ while True:
             print(number)
             number -= 1
 
-            todos = get_todos()
+            todos = get_todos("todos.txt")
 
             new_todo = input("Enter the new to-do item: ")
             todos[number] = new_todo + "\n"
@@ -48,7 +48,7 @@ while True:
             number = int(action[9:])
             number -= 1
 
-            todos = get_todos()
+            todos = get_todos("todos.txt")
 
             todo_to_complete = todos[number]
             todos.pop(number)
