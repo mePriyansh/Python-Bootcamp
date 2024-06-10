@@ -3,7 +3,7 @@ def get_todos(filepath="todos.txt"):
          todos_local = file_local.readlines()
          return todos_local
 
-def write_todos(filepath, todos_arg):
+def write_todos(todos_arg,filepath="todos.txt"):
     with open(filepath, "w") as file:
         file.writelines(todos_arg)
 
@@ -18,7 +18,7 @@ while True:
 
         todos.append(todo + "\n")
 
-        write_todos("todos.txt", todos)
+        write_todos(todos)
         print(f"{todo} is added!")
 
     elif action.startswith("Show"):
@@ -39,7 +39,7 @@ while True:
             new_todo = input("Enter the new to-do item: ")
             todos[number] = new_todo + "\n"
 
-            write_todos("todos.txt", todos)
+            write_todos(todos)
         except ValueError:
             print("Not a valid command!!")
             continue
@@ -54,7 +54,7 @@ while True:
             todo_to_complete = todos[number]
             todos.pop(number)
 
-            write_todos("todos.txt", todos)
+            write_todos(todos)
 
             message = f"{todo_to_complete.strip()} is completed!"
             print(message)
