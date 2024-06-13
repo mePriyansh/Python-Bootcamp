@@ -1,6 +1,6 @@
 #from functions import get_todos, write_todos
 
-import functions
+from modules import functions
 
 while True:
     action = input("Add or Show or Edit or Complete or Exit? ")
