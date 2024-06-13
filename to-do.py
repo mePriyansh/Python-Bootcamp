@@ -1,4 +1,6 @@
-from functions import get_todos, write_todos
+#from functions import get_todos, write_todos
+
+import functions
 
 while True:
     action = input("Add or Show or Edit or Complete or Exit? ")
@@ -7,16 +9,16 @@ while True:
     if action.startswith("Add"):
         todo = action[4:]
 
-        todos = get_todos()
+        todos = functions.get_todos()
 
         todos.append(todo + "\n")
 
-        write_todos(todos)
+        functions.write_todos(todos)
         print(f"{todo} is added!")
 
     elif action.startswith("Show"):
 
-        todos = get_todos()
+        todos = functions.get_todos()
 
         for index, item in enumerate(todos, 1):
             print(f"{index}-{item.strip()}")
@@ -27,12 +29,12 @@ while True:
             print(number)
             number -= 1
 
-            todos = get_todos()
+            todos = functions.get_todos()
 
             new_todo = input("Enter the new to-do item: ")
             todos[number] = new_todo + "\n"
 
-            write_todos(todos)
+            functions.write_todos(todos)
         except ValueError:
             print("Not a valid command!!")
             continue
@@ -42,12 +44,12 @@ while True:
             number = int(action[9:])
             number -= 1
 
-            todos = get_todos()
+            todos = functions.get_todos()
 
             todo_to_complete = todos[number]
             todos.pop(number)
 
-            write_todos(todos)
+            functions.write_todos(todos)
 
             message = f"{todo_to_complete.strip()} is completed!"
             print(message)
