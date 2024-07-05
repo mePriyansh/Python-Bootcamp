@@ -3,3 +3,4 @@ Play game
 Code
 Buy Grocery
 Go Gym
+Study Python
