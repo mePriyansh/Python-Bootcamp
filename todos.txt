@@ -1,7 +1,8 @@
 Study
-Play game
+Play chess
 Code
-Buy Grocery
+Buy plants
 Go Gym
 Study Python
 Cook Food
+Run marathon
