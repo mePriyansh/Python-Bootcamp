@@ -32,7 +32,7 @@ while True:
             index=todos.index(todo_to_edit)
             todos[index]=new_todo
             functions.write_todos(todos)
-            window['todos'].update(values=todos)
+            window['todos'].update(values=todos)                    #to update list during run-time
 
         case "todos":
             window['todo'].update(value=values['todos'][0])         #to update list during run-time   
