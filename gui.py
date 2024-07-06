@@ -35,10 +35,10 @@ while True:
             window['todos'].update(values=todos)
 
         case "todos":
-            window['todo'].update(value=values['todos'][0])            
+            window['todo'].update(value=values['todos'][0])         #to update list during run-time   
 
-        case sg.WIN_CLOSED:
-            break
+        case sg.WIN_CLOSED:                                         #to close the window w/o error
+            break                                               
 
 window.close()
 
