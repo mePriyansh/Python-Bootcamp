@@ -7,9 +7,14 @@ add_button=sg.Button("Add",tooltip="Add your task")
 listbox=sg.Listbox(values=functions.get_todos(), key='todos', 
                    enable_events=True, size=[40,10])
 edit_button=sg.Button("Edit", tooltip="Edit your task")
+complete_button=sg.Button("Complete")
+exit_button=sg.Button("Exit")
 
 window=sg.Window("My To-Do App", 
-                 layout=[[label],[input_box,add_button], [listbox, edit_button]],
+                 layout=[[label],
+                         [input_box,add_button], 
+                         [listbox, edit_button, complete_button],
+                         [exit_button]],
                  font=("Helvetica", 15))
 
 while True:
@@ -32,7 +37,18 @@ while True:
             index=todos.index(todo_to_edit)
             todos[index]=new_todo
             functions.write_todos(todos)
-            window['todos'].update(values=todos)                    #to update list during run-time
+            window['todos'].update(values=todos)     
+                           #to update list during run-time
+        case "Complete":
+            todo_to_complete=values['todos'][0]
+            todos=functions.get_todos()
+            todos.remove(todo_to_complete)
+            functions.write_todos(todos)
+            window['todos'].update(values=todos)             #to update list during run-time
+            window['todo'].update(value="")  
+            
+        case "Exit":
+            break                  
 
         case "todos":
             window['todo'].update(value=values['todos'][0])         #to update list during run-time   

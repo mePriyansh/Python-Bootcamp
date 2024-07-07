@@ -1,7 +1,6 @@
 Study
 Play chess
 Code
-Buy plants
 Go Gym
 Study Python
 Cook Food
