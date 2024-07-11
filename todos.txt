@@ -1,7 +1,7 @@
 Study
 Play chess
-Code
 Go Gym
 Study Python
 Cook Food
-Run marathon
+Code
+Run Marathon
