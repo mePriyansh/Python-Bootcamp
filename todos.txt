@@ -5,3 +5,4 @@ Study Python
 Cook Food
 Code
 Run Marathon
+Study C++
