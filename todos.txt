@@ -2,7 +2,5 @@ Study
 Play chess
 Go Gym
 Study Python
-Cook Food
 Code
-Run Marathon
 Study C++
