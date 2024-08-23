@@ -31,4 +31,4 @@ for index,row in df.iterrows():
             #for line throughot page
         for y in range(20,278,10):
             pdf.line(10,y,200,y)
-pdf.output('output_line.pdf')
+pdf.output(r"Project 4- Pdf Template\output_line.pdf")
