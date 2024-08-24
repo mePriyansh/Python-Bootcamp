@@ -15,6 +15,3 @@ for file in filepath:
     pdf.cell( w=50,h=8,txt=name,ln=1)
 
 pdf.output(f"Project 6 - Text to pdf\\PDFs\\output.pdf")
-
-
-
