@@ -1,6 +1,5 @@
 import pandas as pd
 import glob
-import os
 
 # Get the list of file paths
 filepaths = glob.glob("Project 5- Excel to pdf invoice\\Invoice\\*.xlsx")
