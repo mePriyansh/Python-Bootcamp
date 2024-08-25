@@ -7,7 +7,6 @@ filepath=glob.glob("Project 6 - Text to pdf\\Text Files\\*.txt")
 pdf=FPDF(orientation='P', unit='mm', format='A4')
 
 for file in filepath:
-
     pdf.add_page()
     filename=Path(file).stem
     name=filename.title()
