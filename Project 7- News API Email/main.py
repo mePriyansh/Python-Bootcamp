@@ -1,5 +1,6 @@
 import requests
 import os
+from send_email import send_email
 
 from dotenv import load_dotenv
 
@@ -14,6 +15,10 @@ request=requests.get(url)
 content=request.json()
 
 #Access articles title and description
-for article in content['articles']:
-    print(article['title'])
-    print(article['description'])
+body=""
+for article in content["articles"]:
+    if article["title"] is not None:
+        body = body + article["title"] + "\n" + article["description"] + "\n\n"
+    
+body = body.encode("utf-8")    
+send_email(message=body)
